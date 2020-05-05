@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('layouts/header'); -%>
+
+<body>
+
+  <%- include('layouts/teamnavbar'); -%>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('/img/contact-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>New Team</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">        
+        <!-- for browser to know tha tthe form contains mutli media. will encripy multie media and send to server -->
+        <form action="/teams/store" method="POST" enctype="multipart/form-data">
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Name</label>
+              <input type="text" class="form-control" placeholder="Name" id="name" name="name">
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Type of sport</label>
+              <input type="text" class="form-control" placeholder="Type of sport" id="typeOfSport" name="typeOfSport">
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Age</label>
+              <input type="text" class="form-control" placeholder="Age" id="age" name="age">
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Level</label>
+              <input type="text" class="form-control" placeholder="Level" id="level" name="level">
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Image</label>
+              <input type="file" class="form-control" id="image" name="image">              
+            </div>
+          </div>          
+          <br>                    
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <%- include('layouts/footer'); -%>
+  <%- include('layouts/scripts'); -%>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('layouts/header'); -%>
+<body>
+<%- include('layouts/teamnavbar'); -%>
+<!-- <header class="masthead" style="background-image: url('img/post-bg.jpg')"> -->
+<header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Team bruger admin side</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <% for (var i = 0; i < sportsteamusers.length; i++) { %>
+                <div class="post-preview">
+                        <h2 class="post-title">
+                            <%= sportsteamusers[i].name %>
+                        </h2>
+                        <h3 class="post-subtitle">
+                          Team id:  <%= sportsteamusers[i].teamid %>
+                        </h3>
+                    <h3 class="post-subtitle">
+                        List of users:  <%= sportsteamusers[i].userid %>
+                    </h3>
+                </div>
+                <hr>
+            <% } %>
+        </div>
+    </div>
+</div>
+<hr>
+<%- include('layouts/footer'); -%>
+<%- include('layouts/scripts'); -%>
+</body>
+</html>

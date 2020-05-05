@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('layouts/header'); -%>
+<body>
+    <%- include('layouts/navbar'); -%>
+  <!-- <header class="masthead" style="background-image: url('img/post-bg.jpg')"> -->
+  <header class="masthead" style="background-image: url('<%= sportsteam.image %>')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">              
+            <h1><%= sportsteam.name %></h1>
+            <h2 class="subheading"> Sport: <%= sportsteam.typeOfSport %></h2>
+            <h2 class="subheading"> Age: <%= sportsteam.age %></h2>
+            <h2 class="subheading"> Level: <%= sportsteam.level %></h2>
+            <span class="meta">Team posted by
+              <a href="#"><%= sportsteam.userid.username %></a>
+              on <%= sportsteam.datePosted.toDateString() %></span>
+            <br/>
+            <% if(loggedIn) { %>
+            <form action="/teams/adduser" method="POST">
+              <input type="submit" value="Tilmeld">
+              <input type="hidden" name="teamid" value="<%= sportsteam._id %>">
+            </form>
+            <% } %>
+            <!-- form, button, onclick, tilmeld   -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <hr>
+  <%- include('layouts/footer'); -%>
+  <%- include('layouts/scripts'); -%>
+</body>
+</html>
